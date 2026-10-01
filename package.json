@@ -1,0 +1,30 @@
+{
+  "name": "kryon-jamili-luxe-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Etapa 7B (auditada): fundação real (Next.js + TypeScript + Supabase/PostgreSQL). Telas e fluxos entram nas etapas 7C em diante.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:start": "supabase start",
+    "db:reset": "supabase db reset",
+    "db:test": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f supabase/tests/00_stub_auth_local.sql -f supabase/tests/01_isolamento_multi_tenant.sql -f supabase/tests/02_dupla_reserva_constraint.sql -f supabase/tests/03_conflito_horario_duracao.sql -f supabase/tests/04_fk_compostas_integridade.sql -f supabase/tests/05_imutabilidade_eventos.sql -f supabase/tests/06_reservas_expiradas_idempotencia_numeracao.sql",
+    "test:static": "node supabase/tests/static/auditoria-estatica.js",
+    "test:sim": "node supabase/tests/sim/simulacao-logica.js",
+    "test:local": "npm run test:static && npm run test:sim"
+  },
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "@supabase/ssr": "^0.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.0",
+    "supabase": "^1.200.0"
+  }
+}

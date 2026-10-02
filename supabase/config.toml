@@ -1,1 +1,26 @@
+project_id = "kryon-jamili-luxe-studio"
 
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "auth"]
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+
+# Como rodar localmente (precisa de Docker instalado na sua máquina):
+#   supabase start
+#   supabase db reset   -> aplica todas as migrações em ordem + supabase/seed.sql
+#
+# Como aplicar num projeto Supabase real na nuvem:
+#   supabase link --project-ref <seu-project-ref>
+#   supabase db push

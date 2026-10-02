@@ -8,3 +8,4 @@ npm run db:test      # testes SQL — exigem PostgreSQL/Supabase real (ainda NÃ
 ```
 
 O protótipo `luxe-studio.html` (Etapas 1-6) continua sendo a referência visual e de regras de negócio (não foi alterado) até a Etapa 7H substituí-lo pelo fluxo público real.
+<!-- Supabase 7B -->
